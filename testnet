@@ -5,7 +5,7 @@ sudo apt-get install
 sudo apt install screen
 
 #Pencere oluşturalım
-screen -S anasayfa
+screen -S aleo
  
 #Rust yükleme talimatları
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -13,6 +13,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #Bu Github deposunu klonlaylım
 git clone https://github.com/AleoHQ/snarkOS.git --depth 1 
+
+#portları açalım
+sudo apt install ufw
+ufw allow 4133
+ufw allow 3033
+ufw allow 22
  
 #Ardından, snarkOSdizine gidin
 cd snarkOS
@@ -21,6 +27,9 @@ cd snarkOS
 ./build_ubuntu.sh
 source $HOME/.cargo/env
 cargo install --path .
+
+ 
+
 
 #Ardından, bir Aleo hesap adresi oluşturun
 snarkos account new
