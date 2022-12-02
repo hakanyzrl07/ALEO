@@ -1,18 +1,44 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+#kütüphaneleri ve güncellemeleri oluşturalım
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install
+sudo apt install screen
 
-# Other files and folders
-.settings/
+#Pencere oluşturalım
+screen -S anasayfa
+ 
+#Rust yükleme talimatları
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+#Bu Github deposunu klonlaylım
+git clone https://github.com/AleoHQ/snarkOS.git --depth 1 
+ 
+#Ardından, snarkOSdizine gidin
+cd snarkOS
+ 
+#Son olarak yükleyin
+./build_ubuntu.sh
+source $HOME/.cargo/env
+cargo install --path .
+
+#Ardından, bir Aleo hesap adresi oluşturun
+snarkos account new
+
+ 
+# #Bu, terminalde yeni bir Aleo hesabının çıktısını alacaktır. Çıktı aşağıdaki gibi olacaktır.
+# Attention - Remember to store this account private key and view key.
+#  Private Key  APrivateKey1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  <-- Save Me And Use In The Next Step
+#     View Key  AViewKey1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  <-- Save Me
+#      Address  aleo1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  <-- Save Me
+
+
+#Ardından, dizinden bir kanıtlama düğümü başlatmak için şunu snarkOSçalıştırın
+./run-prover.sh
+
+
+#İstendiğinde, Aleo özel anahtarınızı girin:
+#Enter the Aleo Prover account private key:
+APrivateKey1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+(BAŞINDA # YAZAN YERLER AÇIKLAMA SATIRIDIR, TERMİNALE YAPIŞTIRMAYIN!)                                                                                                 
