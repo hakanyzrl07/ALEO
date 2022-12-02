@@ -50,4 +50,8 @@ snarkos account new
 #Enter the Aleo Prover account private key:
 APrivateKey1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-(BAŞINDA # YAZAN YERLER AÇIKLAMA SATIRIDIR, TERMİNALE YAPIŞTIRMAYIN!)                                                                                                 
+(BAŞINDA # YAZAN YERLER AÇIKLAMA SATIRIDIR, TERMİNALE YAPIŞTIRMAYIN!)       
+
+DAHA SONRA loglar kamaya başlayacak
+Ctrl+a+d basarak screen kapatabiliriz
+tekrar screen girme için screen -r aleo
